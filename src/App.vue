@@ -18,12 +18,20 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-#app {
+@import "./assets/scss/_colors.scss";
+
+body {
+  background-color: $background;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: $text-primary;
+}
+#app {
+  width: 100%;
+  min-height: 100vh;  
 }
 </style>
