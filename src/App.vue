@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <Menu></Menu>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Menu from "./components/Menu.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    Menu
   },
 })
 export default class App extends Vue {}
@@ -30,6 +29,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: $text-primary;
 }
+
+a {
+  color: inherit;
+}
+
 #app {
   width: 100%;
   min-height: 100vh;  
