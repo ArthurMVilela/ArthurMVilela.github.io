@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <Menu></Menu>
+    <Menu/>
+    <Landing/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Menu from "./components/Menu.vue";
+import Landing from "./components/Landing.vue";
 
 @Component({
   components: {
-    Menu
+    Menu,
+    Landing
   },
 })
 export default class App extends Vue {}

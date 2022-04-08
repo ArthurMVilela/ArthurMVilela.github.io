@@ -38,7 +38,7 @@ export default class Menu extends Vue {
 	color: rgba($accent_text, 0.85);
 
 	&__topbar {
-		background-color: $accent;
+		background-color: $color-primary-dark;
 		position: fixed;
 		top: 0;
 		left: 0;
