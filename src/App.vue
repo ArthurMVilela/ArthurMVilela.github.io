@@ -37,7 +37,7 @@
       </div>
     </section>
 
-    <div></div>
+    <Footer/>
   </div>
 </template>
 
@@ -45,11 +45,13 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Menu from "./components/Menu.vue";
 import Landing from "./components/Landing.vue";
+import Footer from "./components/Footer.vue";
 
 @Component({
   components: {
     Menu,
     Landing,
+    Footer
   },
 })
 export default class App extends Vue {}
