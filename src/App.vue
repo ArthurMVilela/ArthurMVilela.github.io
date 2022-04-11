@@ -20,6 +20,13 @@
       <div class="section__content">
         <h3>Projetos</h3>
         <p>Alguns projetos que participei ou criei (infelizmente projetos profissionais estam sobre proteção de acordos de confiabilidade):</p>
+        <CardGrid>
+          <CardGridItem class="project card-grid__item--span-2" v-for="project in projects" :key="project.name">
+            <span class="project__name">{{ project.name }}</span>
+            <p class="project__description">{{ project.description }}</p>
+            <a v-for="link in project.links" :key="link.url" :href="link.url" target="_blank">{{link.label}}</a>
+          </CardGridItem>
+        </CardGrid>
       </div>
     </section>
 
@@ -60,6 +67,17 @@ type Skill = {
   icon: string;
 }
 
+type ProjectLink = {
+  label: string;
+  url: string;
+}
+
+type Project = {
+  name: string;
+  description: string;
+  links: ProjectLink[];
+}
+
 @Component({
   components: {
     Menu,
@@ -82,7 +100,10 @@ export default class App extends Vue {
     {name: "Docker", icon: "devicon-docker-plain"},
     {name: "MySQL", icon: "devicon-mysql-plain"},
     {name: "Kotlin", icon: "devicon-kotlin-plain"}
+  ]
 
+  projects: Project[] = [
+    {name: "Cartha", description: "Sistema digital para cartório utilizando blockchains (TCC).", links: [{label: "Github", url: "https://github.com/ArthurMVilela/cartha"}]}
   ]
 }
 </script>

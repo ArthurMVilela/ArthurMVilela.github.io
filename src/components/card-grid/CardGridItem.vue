@@ -21,6 +21,11 @@ export default class CardGridItem extends Vue {
 	padding: 10px;
 	-webkit-box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.2); 
 	box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.2);
+
+	&--span-2 {
+		grid-column: span 2;
+
+	}
 }
 
 </style>
