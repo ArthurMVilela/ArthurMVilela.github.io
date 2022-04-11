@@ -27,6 +27,9 @@
       <div class="section__content">
         <h3>Tecnologias</h3>
         <p>Tecnologias que eu já utilizei, tanto para trabalho quanto para minha faculdade:</p>
+        <CardGrid>
+          <CardGridItem v-for="skill in skills" :key="skill">{{skill}}</CardGridItem>
+        </CardGrid>
       </div>
     </section>
 
@@ -46,15 +49,23 @@ import { Component, Vue } from 'vue-property-decorator';
 import Menu from "./components/Menu.vue";
 import Landing from "./components/Landing.vue";
 import Footer from "./components/Footer.vue";
+import CardGrid from "./components/card-grid/CardGrid.vue";
+import CardGridItem from "./components/card-grid/CardGridItem.vue";
 
 @Component({
   components: {
     Menu,
     Landing,
-    Footer
+    Footer,
+    CardGrid,
+    CardGridItem
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  skills = [
+    "AAA", "AAA", "AAA", "AAA", "AAA", "AAA"
+  ]
+}
 </script>
 
 <style lang="scss">
