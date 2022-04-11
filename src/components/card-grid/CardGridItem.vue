@@ -14,12 +14,13 @@ export default class CardGridItem extends Vue {
 </script>
 
 <style lang="scss">
+
 .card-grid__item {
 	background: white;
 	border-radius: 5px;
-	margin: 10px;
 	padding: 10px;
-	box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.2); 
+	box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.2);
 }
 
 </style>

@@ -28,7 +28,7 @@
         <h3>Tecnologias</h3>
         <p>Tecnologias que eu já utilizei, tanto para trabalho quanto para minha faculdade:</p>
         <CardGrid>
-          <CardGridItem v-for="skill in skills" :key="skill.name">
+          <CardGridItem class="skill" v-for="skill in skills" :key="skill.name">
             <i class="skill__icon" :class="skill.icon"></i>
             <span class="skill__name">{{ skill.name }}</span>
           </CardGridItem>
@@ -128,13 +128,23 @@ a {
     width: 100%;
     max-width: 1020px;
     min-height: 100%;
-    overflow: auto;
+    // overflow: auto;
     margin: 10px auto;
     
   }
 }
 
 .skill {
+  transition: transform 400ms, color 300ms, box-shadow 300ms;
+
+  &:hover {
+    transform: scale(1.05);
+    color: $color-secondary-dark;
+
+    -webkit-box-shadow: 0px 7px 10px 2px rgba(0,0,0,0.15); 
+    box-shadow: 0px 7px 10px 2px rgba(0,0,0,0.15)
+  }
+
   &__icon {
     display: block;
     text-align: center;
