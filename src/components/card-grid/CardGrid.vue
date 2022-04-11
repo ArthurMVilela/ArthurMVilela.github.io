@@ -16,8 +16,10 @@ export default class CardGrid extends Vue {
 <style lang="scss">
 .card-grid {
 	display: grid;
-	width: 100%;
+	// width: 100%;
+	margin: 5px;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	grid-template-rows: 1fr;
+	justify-content: center;
 }
 </style>

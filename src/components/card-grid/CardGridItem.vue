@@ -17,9 +17,9 @@ export default class CardGridItem extends Vue {
 .card-grid__item {
 	background: white;
 	border-radius: 5px;
-	margin: 5px;
-	padding: 5px;
-	-webkit-box-shadow: 0px 10px 15px 5px rgba(0,0,0,0.2); 
-	box-shadow: 0px 10px 15px 5px rgba(0,0,0,0.2);
+	margin: 10px;
+	padding: 10px;
+	box-shadow: 0px 10px 20px 5px rgba(0,0,0,0.15);
 }
+
 </style>

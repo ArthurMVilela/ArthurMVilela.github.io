@@ -28,7 +28,10 @@
         <h3>Tecnologias</h3>
         <p>Tecnologias que eu já utilizei, tanto para trabalho quanto para minha faculdade:</p>
         <CardGrid>
-          <CardGridItem v-for="skill in skills" :key="skill">{{skill}}</CardGridItem>
+          <CardGridItem v-for="skill in skills" :key="skill.name">
+            <i class="skill__icon" :class="skill.icon"></i>
+            <span class="skill__name">{{ skill.name }}</span>
+          </CardGridItem>
         </CardGrid>
       </div>
     </section>
@@ -52,6 +55,11 @@ import Footer from "./components/Footer.vue";
 import CardGrid from "./components/card-grid/CardGrid.vue";
 import CardGridItem from "./components/card-grid/CardGridItem.vue";
 
+type Skill = {
+  name: string;
+  icon: string;
+}
+
 @Component({
   components: {
     Menu,
@@ -62,8 +70,19 @@ import CardGridItem from "./components/card-grid/CardGridItem.vue";
   },
 })
 export default class App extends Vue {
-  skills = [
-    "AAA", "AAA", "AAA", "AAA", "AAA", "AAA"
+  skills: Skill[] = [
+    {name: "JS", icon: "devicon-javascript-plain"},
+    {name: "CSS", icon : "devicon-css3-plain"},
+    {name: "HTML", icon : "devicon-html5-plain"},
+    {name: "Golang", icon : "devicon-go-original-wordmark"},
+    {name: "Typescript", icon : "devicon-typescript-plain"},
+    {name: "Vue", icon : "devicon-vuejs-plain"},
+    {name: "Node js", icon : "devicon-nodejs-plain-wordmark"},
+    {name: "SCSS/SASS", icon : "devicon-sass-original"},
+    {name: "Docker", icon: "devicon-docker-plain"},
+    {name: "MySQL", icon: "devicon-mysql-plain"},
+    {name: "Kotlin", icon: "devicon-kotlin-plain"}
+
   ]
 }
 </script>
@@ -94,7 +113,7 @@ a {
 .section {
   width: 100%;
   min-height: 75vh;
-  overflow: hidden;
+
 
   &--light {
     background-color: $background;
@@ -108,7 +127,26 @@ a {
   &__content {
     width: 100%;
     max-width: 1020px;
+    min-height: 100%;
+    overflow: auto;
     margin: 10px auto;
+    
+  }
+}
+
+.skill {
+  &__icon {
+    display: block;
+    text-align: center;
+    font-size: 5rem;
+    padding: 0.5em;
+  }
+
+  &__name {
+    text-align: center;
+    display: block;
+    font-weight: bold;
+
   }
 }
 </style>
