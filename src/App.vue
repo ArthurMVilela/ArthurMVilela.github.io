@@ -21,10 +21,12 @@
         <h3>Projetos</h3>
         <p>Alguns projetos que participei ou criei (infelizmente projetos profissionais estam sobre proteção de acordos de confiabilidade):</p>
         <CardGrid>
-          <CardGridItem class="project card-grid__item--span-2" v-for="project in projects" :key="project.name">
+          <CardGridItem class="project " v-for="project in projects" :key="project.name">
+            
+            <img class="project__image" :src="project.image"/>
             <span class="project__name">{{ project.name }}</span>
             <p class="project__description">{{ project.description }}</p>
-            <a v-for="link in project.links" :key="link.url" :href="link.url" target="_blank">{{link.label}}</a>
+            <Button v-for="link in project.links" :key="link.url" target="_blank" link="true" :url="link.url">{{link.label}}</Button>
           </CardGridItem>
         </CardGrid>
       </div>
@@ -61,6 +63,7 @@ import Landing from "./components/Landing.vue";
 import Footer from "./components/Footer.vue";
 import CardGrid from "./components/card-grid/CardGrid.vue";
 import CardGridItem from "./components/card-grid/CardGridItem.vue";
+import Button from "./components/Button.vue";
 
 type Skill = {
   name: string;
@@ -74,6 +77,7 @@ type ProjectLink = {
 
 type Project = {
   name: string;
+  image: string;
   description: string;
   links: ProjectLink[];
 }
@@ -84,7 +88,8 @@ type Project = {
     Landing,
     Footer,
     CardGrid,
-    CardGridItem
+    CardGridItem,
+    Button
   },
 })
 export default class App extends Vue {
@@ -103,7 +108,7 @@ export default class App extends Vue {
   ]
 
   projects: Project[] = [
-    {name: "Cartha", description: "Sistema digital para cartório utilizando blockchains (TCC).", links: [{label: "Github", url: "https://github.com/ArthurMVilela/cartha"}]}
+    {name: "Cartha", image:"./cartha.png", description: "Sistema digital para cartório utilizando blockchains (TCC).", links: [{label: "Github", url: "https://github.com/ArthurMVilela/cartha"}]}
   ]
 }
 </script>
@@ -178,6 +183,30 @@ a {
     display: block;
     font-weight: bold;
 
+  }
+}
+
+.project {
+  transition: transform 400ms, box-shadow 300ms;
+
+  &:hover {
+    transform: scale(1.05);
+
+    -webkit-box-shadow: 0px 7px 10px 2px rgba(0,0,0,0.15); 
+    box-shadow: 0px 7px 10px 2px rgba(0,0,0,0.15)
+  }
+
+  &__name {
+    // text-align: center;
+    width: 100%;
+    font-weight: bold;
+    margin: .5em 0;
+    display: block;
+  }
+  &__image {
+    width: 70%;
+    margin: 5px auto;
+    display: block;
   }
 }
 </style>
